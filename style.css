@@ -225,6 +225,7 @@ button:hover {
   text-decoration: underline;
 }
 
+/* ... seu CSS anterior ... */
 
 /* RESPONSIVO */
 @media screen and (max-width: 900px) {
@@ -249,6 +250,9 @@ button:hover {
     transition: right 0.3s ease-in-out;
     z-index: 999;
   }
+} /* Fecha @media */
+
+/* Footer links */
 footer a {
   color: #ffcc00; /* cor do link no rodapé */
   text-decoration: none; /* sem sublinhado */
@@ -256,9 +260,10 @@ footer a {
 }
 
 footer a:hover {
-  text-decoration: underline; /* sublinhado quando passar o mouse */
+  text-decoration: underline; /* sublinhado ao passar o mouse */
 }
 
+/* Navbar ativa no mobile */
 .navbar.active {
   right: 0; /* posiciona a navbar ativa */
 }
