@@ -45,19 +45,21 @@
     </div>
   </section>
 
-<!-- IPHONES -->
+  <!-- IPHONES -->
   <section id="iphones" class="produtos">
     <div class="container">
       <h2>iPhones</h2>
       <div class="grid">
-       
+
         <div class="card">
           <img src="ios12.png" alt="iPhone 12">
-          <h3>consulte os modelos disponiveis!⬇️</h3>
-          
-  <input type="text" id="modeloInput" placeholder="Digite o nome do modelo">
-  <button onclick="enviarParaWhatsApp()">Consultar no WhatsApp</button>
-</div>
+          <h3>Consulte os modelos disponíveis! ⬇️</h3>
+          <input type="text" id="modeloInput" placeholder="Digite o nome do modelo">
+          <button onclick="enviarParaWhatsApp()">Consultar no WhatsApp</button>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- ACESSÓRIOS -->
@@ -104,10 +106,58 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2025 Ultra Cell - Todos os direitos reservados/_vitorkr feito com estilo.</p>
+      <p>© 2025 Ultra Cell - Todos os direitos reservados / _vitorkr feito com estilo.</p>
     </div>
   </footer>
-<script src="script.js"></script>
+
+  <!-- ✅ SCRIPT embutido com tudo funcionando -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu Hamburguer
+      const menuToggle = document.createElement('div');
+      menuToggle.id = 'menu-toggle';
+      menuToggle.innerHTML = '&#9776;';
+      document.querySelector('.header').appendChild(menuToggle);
+
+      const navbar = document.querySelector('.navbar');
+
+      menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+
+      // Scroll suave
+      document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetID = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetID);
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 60,
+              behavior: 'smooth'
+            });
+            navbar.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // ✅ Função que envia modelo para WhatsApp
+    function enviarParaWhatsApp() {
+      const modelo = document.getElementById("modeloInput").value.trim();
+
+      if (modelo === "") {
+        alert("Por favor, digite o nome do modelo.");
+        return;
+      }
+
+      const numero = "5581995100345";
+      const mensagem = encodeURIComponent("Olá! Gostaria de consultar o modelo: " + modelo);
+      const url = "https://wa.me/" + numero + "?text=" + mensagem;
+
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
