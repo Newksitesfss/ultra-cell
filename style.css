@@ -38,8 +38,14 @@ header {
   height: 55px;
 }
 
+/* Navbar Desktop */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .navbar a {
-  margin: 0 12px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -50,17 +56,28 @@ header {
   color: #ffcc00;
 }
 
+/* WhatsApp */
 .whatsapp a {
   background: #25d366;
   color: #fff;
-  padding: 10px 18px;
+  padding: 8px 18px;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
+  transition: background 0.3s;
 }
 
 .whatsapp a:hover {
   background: #1ebd5a;
+}
+
+/* Hamburger Menu Mobile */
+#menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* HERO */
@@ -181,4 +198,33 @@ footer {
   padding: 20px 0;
   margin-top: 40px;
   font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 900px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 65px;
+    right: -100%;
+    flex-direction: column;
+    background: #111;
+    width: 220px;
+    height: calc(100% - 65px);
+    padding-top: 20px;
+    gap: 15px;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
 }
