@@ -25,26 +25,26 @@
           });
           if (navbar.classList.contains('active')) {
             navbar.classList.remove('active');
+                function enviarParaWhatsApp() {
+      var modelo = document.getElementById("modeloInput").value.trim();
+
+      if (modelo === "") {
+        alert("Por favor, digite o nome do modelo.");
+        return;
+      }
+
+      var numero = "5581995100345"; // com DDI (55) e DDD (81)
+      var mensagem = encodeURIComponent("Olá! Gostaria de consultar o modelo: " + modelo);
+      var url = "https://wa.me/" + numero + "?text=" + mensagem;
+
+      window.open(url, "_blank");
+    }
           }
         }
       });
     });
   });
 
-  // ✅ Função WhatsApp GLOBAL
-  function enviarParaWhatsApp() {
-    var modelo = document.getElementById("modeloInput").value.trim();
 
-    if (modelo === "") {
-      alert("Por favor, digite o nome do modelo.");
-      return;
-    }
-
-    var numero = "5581995100345"; // número com DDI e DDD
-    var mensagem = encodeURIComponent("Olá! Gostaria de consultar o modelo: " + modelo);
-    var url = "https://wa.me/" + numero + "?text=" + mensagem;
-
-    window.open(url, "_blank");
-  }
 </script>
 
