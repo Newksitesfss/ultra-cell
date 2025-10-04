@@ -136,14 +136,37 @@ h2 {
 }
 
 .card {
-  background: #111;
-  border-radius: 12px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(255,255,255,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
 
+  input[type="text"] {
+    padding: 10px;
+    width: 90%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 95%;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #1ebe5d;
+  }
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255,255,255,0.15);
