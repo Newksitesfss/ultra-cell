@@ -210,6 +210,15 @@ footer {
     display: block;
   }
 
+ @media screen and (max-width: 900px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
   .navbar {
     position: fixed;
     top: 65px;
@@ -224,6 +233,7 @@ footer {
     z-index: 999;
   }
 
+  /* ✅ Aqui está o complemento que faltava */
   .navbar.active {
     right: 0;
   }
