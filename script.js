@@ -1,4 +1,5 @@
 <script>
+  // ✅ Essa parte permanece dentro do DOMContentLoaded
   document.addEventListener("DOMContentLoaded", function () {
     // Menu Hamburger
     const menuToggle = document.createElement('div');
@@ -25,26 +26,25 @@
           });
           if (navbar.classList.contains('active')) {
             navbar.classList.remove('active');
-                function enviarParaWhatsApp() {
-      var modelo = document.getElementById("modeloInput").value.trim();
-
-      if (modelo === "") {
-        alert("Por favor, digite o nome do modelo.");
-        return;
-      }
-
-      var numero = "5581995100345"; // com DDI (55) e DDD (81)
-      var mensagem = encodeURIComponent("Olá! Gostaria de consultar o modelo: " + modelo);
-      var url = "https://wa.me/" + numero + "?text=" + mensagem;
-
-      window.open(url, "_blank");
-    }
           }
         }
       });
     });
   });
 
+  // ✅ Agora a função está no escopo global e vai funcionar com onclick no botão
+  function enviarParaWhatsApp() {
+    var modelo = document.getElementById("modeloInput").value.trim();
 
+    if (modelo === "") {
+      alert("Por favor, digite o nome do modelo.");
+      return;
+    }
+
+    var numero = "5581995100345"; // com DDI (55) e DDD (81)
+    var mensagem = encodeURIComponent("Olá! Gostaria de consultar o modelo: " + modelo);
+    var url = "https://wa.me/" + numero + "?text=" + mensagem;
+
+    window.open(url, "_blank");
+  }
 </script>
-
