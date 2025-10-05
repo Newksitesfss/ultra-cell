@@ -260,18 +260,30 @@ button:hover {
     z-index: 999;
   }
 } /* Fecha @media */
-/* Centralização específica no mobile */
+/* Esconde o texto e deixa só o ícone no mobile */
 @media (max-width: 768px) {
-  .whatsapp {
-    justify-content: center;
-    text-align: center;
+  .whatsapp a span {
+    display: none;
+  }
+
+  .whatsapp a::before {
+    content: '💬'; /* ou use um ícone Font Awesome */
+    font-size: 1.4rem;
+    margin-right: 5px;
   }
 
   .whatsapp a {
-    width: 80%;
-    max-width: 300px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0; /* oculta o texto */
   }
 }
+
 /* Footer links */
 footer a {
   color: #ffcc00; /* cor do link no rodapé */
