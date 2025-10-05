@@ -57,14 +57,23 @@ header {
 }
 
 /* WhatsApp */
+.whatsapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
 .whatsapp a {
   background: #25d366;
   color: #fff;
-  padding: 8px 18px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s;
+  display: inline-block;
+  text-align: center;
 }
 
 .whatsapp a:hover {
@@ -251,7 +260,18 @@ button:hover {
     z-index: 999;
   }
 } /* Fecha @media */
+/* Centralização específica no mobile */
+@media (max-width: 768px) {
+  .whatsapp {
+    justify-content: center;
+    text-align: center;
+  }
 
+  .whatsapp a {
+    width: 80%;
+    max-width: 300px;
+  }
+}
 /* Footer links */
 footer a {
   color: #ffcc00; /* cor do link no rodapé */
